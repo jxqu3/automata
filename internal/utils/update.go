@@ -6,8 +6,8 @@ import (
 )
 
 func (g *Game) Update() {
-	for x := range g.Grid {
-		for y := range g.Grid[x] {
+	for x := range g.Grid.Cells {
+		for y := range g.Grid.Cells[x] {
 			c := g.GetCell(x, y)
 			c.Color = color.RGBA{0, 0, 0, 255}
 			if c.Alive {

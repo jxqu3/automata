@@ -10,8 +10,8 @@ func (g *Game) Draw() {
 	cs := g.CellSize
 	g.Update()
 	rl.ClearBackground(color.RGBA{0, 0, 0, 255})
-	for x := range g.Grid {
-		for y := range g.Grid[x] {
+	for x := range g.Grid.Cells {
+		for y := range g.Grid.Cells[x] {
 			cell := g.GetCell(x, y)
 
 			rl.DrawRectangle(int32(x*cs), int32(y*cs), int32(cs), int32(cs), cell.Color)

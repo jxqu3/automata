@@ -4,7 +4,13 @@ type Game struct {
 	Width    int
 	Height   int
 	CellSize int
-	Grid     [][]*Cell
+	Grid     Grid
+}
+
+type Grid struct {
+	Width  int
+	Height int
+	Cells  [][]*Cell
 }
 
 func (g *Game) GetNeighbor(c *Cell, x int, y int) *Cell {
@@ -14,17 +20,11 @@ func (g *Game) GetNeighbor(c *Cell, x int, y int) *Cell {
 	return g.GetCell(cX+x, cY+y)
 }
 
-func (g *Game) Exists(x, y int) bool {
-	return x >= 0 && x < len(g.Grid) && y >= 0 && y < len(g.Grid[x])
-}
-
 func (g *Game) GetCell(x, y int) *Cell {
-	if g.Exists(x, y) {
-		return g.Grid[x][y]
-	}
-	return g.GetCell(0, 0)
+	y = (g.Grid.Width + y) % g.Grid.Width
+	x = (g.Grid.Height + x) % g.Grid.Height
+	return g.Grid.Cells[y][x]
 }
-
 func (g *Game) GetNumberAliveNeighbors(c *Cell) int {
 	var neighbors int
 
