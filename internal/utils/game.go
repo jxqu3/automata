@@ -11,13 +11,6 @@ func (g *Game) GetNeighbor(c *Cell, x int, y int) *Cell {
 	cX := c.Position.X
 	cY := c.Position.Y
 
-	if cX+x < 0 || cX+x >= g.Width {
-		return c
-	}
-	if cY+y < 0 || cY+y >= g.Height {
-		return c
-	}
-
 	return g.GetCell(cX+x, cY+y)
 }
 
