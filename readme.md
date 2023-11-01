@@ -36,4 +36,4 @@ Edit `update.go` this is the stuff that will happen to the cells each iteration
 ![image](https://github.com/checkm4ted/automata/assets/146487129/dd7ac5d8-2a32-4773-bb16-60dfcda18d54)
 ![image](https://github.com/checkm4ted/automata/assets/146487129/c7016c48-3cbb-442d-8800-eab9d41d48a8)
 ![image](https://github.com/checkm4ted/automata/assets/146487129/bdeeb6ed-cb28-4dbb-9b5c-5dd42f8a0386)
-![image](https://github.com/checkm4ted/automata/assets/146487129/20a7a5f4-bda5-4e72-b15d-f3d69f9aaea0)
+![image](https://github.com/checkm4ted/automata/assets/146487129/96c8f3d0-558f-4856-94b8-995c375e0f0f)
