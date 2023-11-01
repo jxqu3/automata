@@ -21,9 +21,9 @@ func (g *Game) GetNeighbor(c *Cell, x int, y int) *Cell {
 }
 
 func (g *Game) GetCell(x, y int) *Cell {
-	y = (g.Grid.Width + y) % g.Grid.Width
-	x = (g.Grid.Height + x) % g.Grid.Height
-	return g.Grid.Cells[y][x]
+	y = (g.Grid.Height + y) % g.Grid.Height
+	x = (g.Grid.Width + x) % g.Grid.Width
+	return g.Grid.Cells[x][y]
 }
 func (g *Game) GetNumberAliveNeighbors(c *Cell) int {
 	var neighbors int
