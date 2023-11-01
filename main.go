@@ -4,7 +4,7 @@ import (
 
 	// Lib to replace err != nil
 
-	"github.com/checkm4ted/va/internal/utils"
+	"github.com/checkm4ted/automata/internal/utils"
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
