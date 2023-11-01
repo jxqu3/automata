@@ -2,7 +2,6 @@ package utils
 
 import (
 	"image/color"
-	"math"
 )
 
 type Vec2 struct {
@@ -19,6 +18,7 @@ func NewVec2(x, y int) Vec2 {
 	return Vec2{x, y}
 }
 
+// Make a new blank grid
 func InitGrid(Width int, Height int, CellSize int) [][]*Cell {
 	grid := make([][]*Cell, Width/CellSize)
 
@@ -26,7 +26,7 @@ func InitGrid(Width int, Height int, CellSize int) [][]*Cell {
 		grid[x] = make([]*Cell, Height/CellSize)
 		for y := range grid[x] {
 			grid[x][y] = &Cell{
-				Alive:    math.Mod(float64(x), 2) == 0,
+				Alive:    false,
 				Position: NewVec2(x, y),
 			}
 		}

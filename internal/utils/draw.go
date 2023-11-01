@@ -8,13 +8,19 @@ import (
 
 func (g *Game) Draw() {
 	cs := g.CellSize
-	g.Update()
 	rl.ClearBackground(color.RGBA{0, 0, 0, 255})
 	for x := range g.Grid.Cells {
 		for y := range g.Grid.Cells[x] {
-			cell := g.GetCell(x, y)
+			c := g.GetCell(x, y) // get cell
 
-			rl.DrawRectangle(int32(x*cs), int32(y*cs), int32(cs), int32(cs), cell.Color)
+			// Set cell color according to it's state
+			c.Color = color.RGBA{0, 0, 0, 255}
+			if c.Alive {
+				c.Color = color.RGBA{50, uint8(c.Position.X), 0, 255}
+			}
+
+			// Draw cell
+			rl.DrawRectangle(int32(x*cs), int32(y*cs), int32(cs), int32(cs), c.Color)
 		}
 	}
 }

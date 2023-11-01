@@ -1,10 +1,12 @@
 package utils
 
 type Game struct {
-	Width    int
-	Height   int
-	CellSize int
-	Grid     Grid
+	Width        int
+	Height       int
+	CellSize     int
+	InitCellSize int
+	Grid         Grid
+	NextGrid     Grid
 }
 
 type Grid struct {
@@ -25,6 +27,7 @@ func (g *Game) GetCell(x, y int) *Cell {
 	x = (g.Grid.Width + x) % g.Grid.Width
 	return g.Grid.Cells[x][y]
 }
+
 func (g *Game) GetNumberAliveNeighbors(c *Cell) int {
 	var neighbors int
 
